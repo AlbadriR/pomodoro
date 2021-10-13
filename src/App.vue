@@ -1,16 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld msg="Pomodoro : Rami"/>
+  <img style="width:20vh" alt="Vue logo" src="../img/Tomato.png">
+  <Item/>
+  <Etat etat=""/>
+  <Timer time=""/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import Item from "./components/Item.vue";
+import Timer from "./components/Timer.vue";
+import Etat from "./components/Etat.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+    Item,
+    Timer,
+    Etat,
+  },
 }
 </script>
 
