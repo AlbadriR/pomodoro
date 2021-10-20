@@ -1,26 +1,37 @@
 <template>
   <HelloWorld msg="Pomodoro : Rami"/>
-  <img style="width:20vh" alt="Vue logo" src="../img/Tomato.png">
-  <Item/>
-  <Etat etat=""/>
-  <Timer time=""/>
+  <Item ></Item>
+  <Cat v-if="isPausedStarted" ref="coucou"></Cat>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import Item from "./components/Item.vue";
-import Timer from "./components/Timer.vue";
-import Etat from "./components/Etat.vue";
+import Cat from "./components/Cat.vue";
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     Item,
-    Timer,
-    Etat,
+    Cat,
   },
+
+  methods: {
+    LoadCat() {
+      this.$refs.coucou.loadNextImage()
+    } 
+  },
+  updated() {
+    setInterval(() => {
+		this.LoadCat()
+	}, 3000)
+     
+    
+  }
 }
+
+
 </script>
 
 <style>
